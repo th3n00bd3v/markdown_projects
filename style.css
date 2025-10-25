@@ -196,7 +196,7 @@ h1 {
 }
 
 .filter-btn.active:hover {
-  background: var(--primary-dark);
+  background: var(--primary);
 }
 
 .project-item.hidden {
