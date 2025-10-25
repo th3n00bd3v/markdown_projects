@@ -1,0 +1,62 @@
+---
+layout: default
+title: Markdown Projects
+---
+
+<h1>Markdown Projects</h1>
+
+<div class="description">
+  <p>Some useful information compiled in Markdown format.
+  Let me know if you have any suggestions or contributions!</p>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Domain</th>
+        <th>Category</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/files/automation.html">Roadmap: Manual to Automation Testing</a></td>
+        <td>Software Development and Testing</td>
+        <td>Guide</td>
+        <td>Roadmap to transition from Manual to Automation Testing.</td>
+      </tr>
+      <tr>
+        <td><a href="/files/command_comparisons.html">CLI Commands Comparison</a></td>
+        <td>IT and Networking</td>
+        <td>Reference</td>
+        <td>List of CLI commands comparison for Windows and Linux (haven't tested yet, mostly works)</td>
+      </tr>
+      <tr>
+        <td><a href="/files/insane_linux_commands.html">Insane Linux Commands</a></td>
+        <td>IT and Networking</td>
+        <td>Reference</td>
+        <td>Insane Linux CLI commands. That's it!</td>
+      </tr>
+      <tr>
+        <td><a href="/files/linux_compatibility_checker.html">Linux Compatibility Checker</a></td>
+        <td>IT and Networking</td>
+        <td>Checklist</td>
+        <td>Commands to check hardware compatibility after installing Ubuntu (may work for other distros, untested).</td>
+      </tr>
+      <tr>
+        <td><a href="/files/selenium_setup.html">Selenium + Python (Setup and Demo)</a></td>
+        <td>Software Development and Testing</td>
+        <td>Tutorial</td>
+        <td>Guide to setup Selenium in Python (for both chromedriver and geckodriver).</td>
+      </tr>
+      <tr>
+        <td><a href="/files/effective_learning.html">Effective Learning Tips</a></td>
+        <td>Learning (General)</td>
+        <td>Guide</td>
+        <td>Effective tips for learning with AI guidance.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

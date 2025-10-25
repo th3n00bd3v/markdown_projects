@@ -252,7 +252,7 @@ lsblk -o NAME,SIZE,TYPE,MOUNTPOINT
 
 ---
 
-## 📋 Printable Summary Table
+## 📋 Summary
 
 | Component          | Test Status                      | Notes                |
 | ------------------ | -------------------------------- | -------------------- |

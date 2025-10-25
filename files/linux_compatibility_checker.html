@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ubuntu Hardware Compatibility & Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content-container">
+    <p>Installing <strong>Ubuntu</strong> on your system is generally safe and works quite well — especially because it is mostly hardware-friendly. However, there are <strong>a few compatibility considerations</strong> you should be aware of:</p>
+
+    <hr>
+
+    <h2>✅ What Usually Works Well Out-of-the-Box</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr><th>Component</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Keyboard &amp; Trackpad</td><td>✅ Fully supported</td></tr>
+          <tr><td>Display / Resolution</td><td>✅ Works normally</td></tr>
+          <tr><td>SSD + HDD detection</td><td>✅ No issue</td></tr>
+          <tr><td>USB Ports</td><td>✅ Functional</td></tr>
+          <tr><td>Wi-Fi / Bluetooth</td><td>⚠️ May require driver</td></tr>
+          <tr><td>Sound &amp; Speakers</td><td>✅ Works fine</td></tr>
+          <tr><td>Webcam</td><td>✅ Works in apps like Cheese, Zoom</td></tr>
+          <tr><td>Power Management</td><td>⚠️ Needs tweaking</td></tr>
+          <tr><td>External displays (HDMI)</td><td>✅ Supported</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <h2>⚠️ Potential Issues &amp; Fixes</h2>
+
+    <h3>🔌 1. Wi-Fi / Bluetooth Adapter</h3>
+    <ul>
+      <li>Some laptops models ship with <strong>Realtek or Broadcom</strong> chipsets, which need proprietary drivers.</li>
+    </ul>
+    <p><strong>Fix:</strong></p>
+    <ul>
+      <li>During or after installation, go to:</li>
+    </ul>
+    <pre>Software & Updates → Additional Drivers</pre>
+    <p>and enable the proprietary Wi-Fi driver (Realtek or Broadcom).</p>
+    <p>If that doesn’t appear:</p>
+    <pre>sudo apt install rtl8821ce-dkms  # Or similar, based on your Wi-Fi chipset</pre>
+
+    <hr>
+
+    <h3>🔋 2. Battery Life &amp; Power Management</h3>
+    <ul>
+      <li>Ubuntu won’t apply battery optimizations by default. You may notice:
+        <ul>
+          <li>Higher CPU usage</li>
+          <li>No auto power tuning</li>
+        </ul>
+      </li>
+    </ul>
+    <p><strong>Fix:</strong> Install power tools:</p>
+    <pre>
+sudo apt install tlp powertop
+sudo tlp start
+    </pre>
+
+    <hr>
+
+    <h3>🎧 3. Audio Switching (Headphones)</h3>
+    <ul>
+      <li>On some laptops, audio doesn’t switch automatically between speakers and headphones.</li>
+    </ul>
+    <p><strong>Fix:</strong> Install <code>pavucontrol</code> (PulseAudio Volume Control):</p>
+    <pre>
+sudo apt install pavucontrol
+    </pre>
+    <p>Use it to manually select input/output sources.</p>
+
+    <hr>
+
+    <h3>🌐 4. Function Keys / Brightness Control</h3>
+    <ul>
+      <li>Sometimes the brightness keys or volume keys don’t work out of the box.</li>
+    </ul>
+    <p><strong>Fix:</strong></p>
+    <ul>
+      <li>Add kernel parameters like <code>acpi_backlight=vendor</code> or use <code>brightnessctl</code>.</li>
+      <li>Most cases work fine with current kernels.</li>
+    </ul>
+
+    <hr>
+
+    <h3>🧠 5. Fingerprint Sensor</h3>
+    <ul>
+      <li>If your model has a fingerprint reader, Linux may not support it out-of-the-box.</li>
+    </ul>
+    <p><strong>Fix:</strong></p>
+    <ul>
+      <li>Use <code>fprintd</code> (partial support) or skip using it.</li>
+    </ul>
+
+    <hr>
+
+    <h3>📥 Optional Tools for Compatibility Checking</h3>
+    <pre>
+sudo apt install hardinfo inxi
+inxi -F
+    </pre>
+    <p>This will give you a full hardware status summary to check for any missing drivers.</p>
+
+    <hr>
+
+    <h2>🟢 Summary</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Component</th><th>Status</th><th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Display, Input</td><td>✅ Stable</td><td>Plug and play</td>
+          </tr>
+          <tr>
+            <td>Audio</td><td>✅ Minor fixes</td><td>Use PulseAudio tools if needed</td>
+          </tr>
+          <tr>
+            <td>Wi-Fi/Bluetooth</td><td>⚠️ Needs drivers</td><td>Use "Additional Drivers" tool</td>
+          </tr>
+          <tr>
+            <td>Power Mgmt</td><td>⚠️ Needs setup</td><td>Use TLP, Powertop</td>
+          </tr>
+          <tr>
+            <td>Fingerprint</td><td>❌ Unsupported</td><td>Can be ignored</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <p>Would you like a <strong>hardware test checklist</strong> for Ubuntu after installation to confirm everything works?</p>
+    <p>Here's a <strong>Hardware Compatibility Test Checklist</strong> for your laptop after installing <strong>Ubuntu</strong>. This will help you verify that every major component works correctly and spot anything that needs fixing.</p>
+
+    <hr>
+
+    <h2>✅ Ubuntu Hardware Compatibility Test Checklist</h2>
+    <blockquote>📝 Run these steps <strong>after installation</strong> and <strong>first reboot</strong>.</blockquote>
+
+    <hr>
+
+    <h3>🔧 Basic System Info</h3>
+    <pre>
+inxi -F
+    </pre>
+    <ul>
+      <li>✅ Check: CPU, RAM, Storage (both NVMe + HDD), and GPU are detected properly.</li>
+    </ul>
+
+    <hr>
+
+    <h3>📶 Wi-Fi &amp; Bluetooth</h3>
+    <pre>
+nmcli device status
+bluetoothctl
+    </pre>
+    <ul>
+      <li>✅ Wi-Fi shows as "connected"</li>
+      <li>✅ Bluetooth can <strong>scan/pair</strong> with a phone or speaker</li>
+    </ul>
+
+    <hr>
+
+    <h3>🎵 Audio</h3>
+    <pre>
+aplay -l
+pavucontrol
+    </pre>
+    <ul>
+      <li>✅ Sound plays through speakers</li>
+      <li>✅ Headphones switch automatically or selectable via <code>pavucontrol</code></li>
+      <li>✅ Mic input works (test via Sound Settings or Voice Recorder)</li>
+    </ul>
+
+    <hr>
+
+    <h3>🔊 Media Keys &amp; Brightness</h3>
+    <ul>
+      <li>✅ Volume up/down/mute keys</li>
+      <li>✅ Screen brightness keys</li>
+      <li>✅ Print Screen (launches Flameshot or saves image)</li>
+      <li>⚠️ If brightness keys don’t work:</li>
+    </ul>
+    <pre>
+sudo apt install brightnessctl
+    </pre>
+
+    <hr>
+
+    <h3>💻 Display</h3>
+    <pre>
+xrandr
+    </pre>
+    <ul>
+      <li>✅ Native screen resolution (1920x1080)</li>
+      <li>✅ External HDMI display support (test dual monitor if possible)</li>
+      <li>✅ No screen tearing (install <code>mate-tweak</code> → Enable "Compositor")</li>
+    </ul>
+
+    <hr>
+
+    <h3>🔌 Battery &amp; Power</h3>
+    <pre>
+tlp-stat -s
+sudo powertop
+    </pre>
+    <ul>
+      <li>✅ Battery recognized</li>
+      <li>✅ System can suspend/resume</li>
+      <li>✅ Power tuning enabled with TLP</li>
+    </ul>
+
+    <hr>
+
+    <h3>🎥 Webcam</h3>
+    <pre>
+cheese
+    </pre>
+    <ul>
+      <li>✅ Webcam opens and works</li>
+    </ul>
+
+    <hr>
+
+    <h3>💻 Keyboard &amp; Touchpad</h3>
+    <ul>
+      <li>✅ Touchpad scroll &amp; tap to click</li>
+      <li>✅ All keys function</li>
+      <li>✅ Function keys (Fn + F1–F12) work (volume, brightness, etc.)</li>
+    </ul>
+
+    <hr>
+
+    <h3>🧲 HDD/SSD Detection</h3>
+    <pre>
+lsblk -o NAME,SIZE,TYPE,MOUNTPOINT
+    </pre>
+    <ul>
+      <li>✅ NVMe SSD shows up as <code>/dev/nvme0n1</code></li>
+      <li>✅ HDD shows as <code>/dev/sda</code> or similar</li>
+    </ul>
+
+    <hr>
+
+    <h3>🔌 USB Ports</h3>
+    <ul>
+      <li>✅ USB 2.0 &amp; 3.0 ports work</li>
+      <li>✅ USB mouse, flash drive recognized</li>
+    </ul>
+
+    <hr>
+
+    <h3>🛑 Optional/Advanced</h3>
+    <ul>
+      <li>Fingerprint Reader: ❌ Usually unsupported</li>
+      <li>Fan control / Sensors:</li>
+    </ul>
+    <pre>
+sudo apt install lm-sensors
+sudo sensors-detect
+sensors
+    </pre>
+
+    <hr>
+
+    <h2>📋 Summary</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Test Status</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CPU, RAM, Disks</td><td>✅ Pass</td><td>Use <code>inxi -F</code></td></tr>
+          <tr><td>Wi-Fi</td><td>✅/⚠️ Check drivers</td><td>Use <code>nmcli</code></td></tr>
+          <tr><td>Bluetooth</td><td>✅/⚠️ Check pairing</td><td>Use <code>bluetoothctl</code></td></tr>
+          <tr><td>Audio</td><td>✅/⚠️ May need <code>pavucontrol</code></td><td></td></tr>
+          <tr><td>Brightness Keys</td><td>✅/⚠️ Might need fix</td><td></td></tr>
+          <tr><td>Webcam</td><td>✅ Pass</td><td>Test with <code>cheese</code></td></tr>
+          <tr><td>Battery Management</td><td>✅/⚠️ Tune with <code>tlp</code>, <code>powertop</code></td><td></td></tr>
+          <tr><td>HDMI Output</td><td>✅ Pass</td><td>Use <code>xrandr</code></td></tr>
+          <tr><td>Touchpad/Keyboard</td><td>✅ Pass</td><td>Check Fn keys too</td></tr>
+          <tr><td>USB Ports</td><td>✅ Pass</td><td>Use flash drive test</td></tr>
+          <tr><td>Fingerprint</td><td>❌ Skip</td><td>Unsupported</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+  </div>
+</body>
+</html>

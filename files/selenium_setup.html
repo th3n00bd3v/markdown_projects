@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Selenium Setup on Ubuntu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content-container">
+    <h1>Selenium + Python (Setup and Demo) - Ubuntu</h1>
+    <p>To install and configure Selenium on Ubuntu, you need to:</p>
+    <ol>
+      <li><strong>Install Python</strong></li>
+      <li><strong>Install Selenium</strong></li>
+      <li><strong>Install a WebDriver (e.g., ChromeDriver or GeckoDriver)</strong></li>
+      <li><strong>Write a simple test script</strong></li>
+    </ol>
+    <hr>
+
+    <h2>✅ Step-by-Step Guide</h2>
+    <h3>1. Install Python and pip (if not already installed)</h3>
+    <pre>
+sudo apt update
+sudo apt install python3 python3-pip -y
+    </pre>
+    <hr>
+
+    <h3>2. Install Selenium</h3>
+    <pre>
+pip3 install selenium
+    </pre>
+    <hr>
+
+    <h3>3. Install Web Browser and WebDriver</h3>
+    <h4>Option A: Google Chrome + ChromeDriver</h4>
+    <p><strong>1. Install Google Chrome</strong></p>
+    <pre>
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+    </pre>
+    <p><strong>2. Install ChromeDriver</strong></p>
+    <p>Check your Chrome version:</p>
+    <pre>
+google-chrome --version
+    </pre>
+    <p>Then install the matching ChromeDriver version:</p>
+    <pre>
+# Replace 123 with your major Chrome version
+CHROME_VERSION=$(google-chrome --version | grep -oP '\d+' | head -1)
+wget https://chromedriver.storage.googleapis.com/$(curl -sS https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION)/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/local/bin/
+chmod +x /usr/local/bin/chromedriver
+    </pre>
+
+    <h4>Option B: Firefox + GeckoDriver</h4>
+    <pre>
+sudo apt install firefox -y
+sudo apt install wget tar -y
+wget https://github.com/mozilla/geckodriver/releases/latest/download/geckodriver-linux64.tar.gz
+tar -xvzf geckodriver-linux64.tar.gz
+sudo mv geckodriver /usr/local/bin/
+chmod +x /usr/local/bin/geckodriver
+    </pre>
+    <hr>
+
+    <h3>4. Test Selenium Script</h3>
+    <h4>Chrome Example:</h4>
+    <pre>
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://www.google.com")
+print("Title:", driver.title)
+driver.quit()
+    </pre>
+    <h4>Firefox Example:</h4>
+    <pre>
+from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Firefox()
+driver.get("https://www.google.com")
+print("Title:", driver.title)
+driver.quit()
+    </pre>
+    <hr>
+
+    <h3>✅ Troubleshooting Tips</h3>
+    <ul>
+      <li>Make sure <code>chromedriver</code> or <code>geckodriver</code> is in your odede>PATH</code>.</li>
+      <li>Use odede>webdriver-manager</code> for automatic driver updates:</li>
+    </ul>
+    <pre>
+pip install webdriver-manager
+    </pre>
+    <pre>
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+
+driver = webdriver.Chrome(ChromeDriverManager().install())
+    </pre>
+    <hr>
+
+    <p>Let me know if you want to set it up in a virtual environment or use headless mode (no GUI).</p>
+  </div>
+</body>
+</html>

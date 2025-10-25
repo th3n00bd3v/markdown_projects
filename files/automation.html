@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Path for Transitioning from Manual to Automation Testing</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 2em;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      color: #34495e;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      text-align: center;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* Content Container */
+    .content-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Table Container */
+    .table-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow-x: auto;
+    }
+
+    /* Table Layout */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px; /* Prevents narrow squeeze on mobile */
+    }
+
+    thead {
+      background-color: #2c3e50;
+      color: white;
+    }
+
+    th, td {
+      padding: 14px 20px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+      vertical-align: top;
+    }
+
+    td a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
+    /* Lists */
+    ul {
+      margin: 10px 0;
+      padding-left: 25px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    /* Links */
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Horizontal Rules */
+    hr {
+      border: none;
+      border-top: 2px solid #ecf0f1;
+      margin: 30px 0;
+    }
+
+    /* Code */
+    code {
+      background-color: #ecf0f1;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+
+    /* Strong/Bold */
+    strong {
+      color: #2c3e50;
+    }
+
+    /* Responsive (Mobile) */
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 1em;
+      }
+
+      .content-container,
+      .table-container {
+        padding: 10px;
+      }
+
+      table {
+        font-size: 0.95em;
+      }
+
+      th, td {
+        padding: 10px 12px;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.3em;
+      }
+
+      h3 {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-container">
+    <h1>🧪 Learning Path for Transitioning from Manual to Automation Testing (JavaScript/Python)</h1>
+
+    <h2>🔰 Phase 1: Bridge Manual to Automation Mindset</h2>
+    <p><strong>Goal</strong>: Understand the purpose and scope of automation.</p>
+
+    <h3>Topics:</h3>
+    <ul>
+      <li>Benefits &amp; limitations of automation testing</li>
+      <li>Test automation pyramid</li>
+      <li>What to automate</li>
+      <li>Agile testing and automation in sprints</li>
+    </ul>
+
+    <h3>Resources:</h3>
+    <ul>
+      <li>
+        <a href="https://testautomationu.applitools.com/introduction-to-test-automation/">Test Automation University – Introduction to Test Automation</a>
+      </li>
+      <li>
+        <em>Manual to Automation Testing: Mindset Shift</em> (search on Medium)
+      </li>
+    </ul>
+    <hr>
+
+    <h2>🧠 Phase 2: Learn Programming (Python or JavaScript)</h2>
+    <p><strong>Goal</strong>: Get comfortable writing and understanding code.</p>
+
+    <h3>JavaScript:</h3>
+    <ul>
+      <li>Variables, functions, conditionals, loops</li>
+      <li>ES6 (arrow functions, destructuring, etc.)</li>
+      <li>OOP in JS: classes, inheritance</li>
+    </ul>
+
+    <h3>Python:</h3>
+    <ul>
+      <li>Data types, loops, functions</li>
+      <li>OOP concepts</li>
+      <li>Error handling</li>
+    </ul>
+
+    <h3>Resources:</h3>
+    <ul>
+      <li>
+        <strong>JavaScript</strong>
+        <ul>
+          <li><a href="https://javascript.info/">JavaScript.info</a></li>
+          <li><a href="https://eloquentjavascript.net/">Eloquent JavaScript (free book)</a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Python</strong>
+        <ul>
+          <li><a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a></li>
+          <li><a href="https://realpython.com/">Real Python</a></li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+
+    <h2>🧪 Phase 3: Web Automation (UI Testing)</h2>
+
+    <h3>JavaScript Stack:</h3>
+    <ul>
+      <li>Tools: <strong>Playwright</strong>, <strong>Cypress</strong></li>
+      <li>Locating elements, waiting, assertions</li>
+      <li>Page Object Model (POM)</li>
+    </ul>
+
+    <h3>Python Stack:</h3>
+    <ul>
+      <li>Tools: <strong>Selenium</strong>, <strong>PyTest</strong></li>
+      <li>Element locators, actions</li>
+      <li>Fixtures, parameterization</li>
+    </ul>
+
+    <h3>Resources:</h3>
+    <ul>
+      <li>
+        <strong>Cypress</strong>
+        <ul>
+          <li><a href="https://docs.cypress.io/">Cypress Docs</a></li>
+          <li><a href="https://testautomationu.applitools.com/cypress-tutorial/">Cypress Course – TAU</a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Playwright</strong>
+        <ul>
+          <li><a href="https://playwright.dev/">Playwright Docs</a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Selenium + Python</strong>
+        <ul>
+          <li><a href="https://testautomationu.applitools.com/selenium-webdriver-python/">Selenium Python – TAU</a></li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+
+    <h2>🌐 Phase 4: API Testing</h2>
+    <p><strong>Goal</strong>: Validate backend APIs with or without UI.</p>
+
+    <h3>Topics:</h3>
+    <ul>
+      <li>REST API concepts</li>
+      <li>Requests: GET, POST, PUT, DELETE</li>
+      <li>Auth: Bearer tokens, OAuth</li>
+      <li>Tools: Postman, Python <code>requests</code>, JS <code>axios</code></li>
+    </ul>
+
+    <h3>Resources:</h3>
+    <ul>
+      <li><a href="https://learning.postman.com/">Postman Learning Center</a></li>
+      <li><a href="https://realpython.com/python-requests/">Python requests – Real Python</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/react-axios-react">Axios for API testing</a></li>
+    </ul>
+    <hr>
+
+    <h2>🛠️ Phase 5: Test Frameworks &amp; Best Practices</h2>
+
+    <h3>JavaScript:</h3>
+    <ul>
+      <li><strong>Mocha</strong>, <strong>Jest</strong></li>
+      <li>Assertions: Chai or built-in</li>
+      <li>POM structure</li>
+    </ul>
+
+    <h3>Python:</h3>
+    <ul>
+      <li>Advanced PyTest: hooks, fixtures</li>
+      <li>Reporting with Allure</li>
+    </ul>
+    <hr>
+
+    <h2>🔄 Phase 6: CI/CD &amp; Git</h2>
+
+    <h3>Topics:</h3>
+    <ul>
+      <li>Git basics: clone, commit, push, branch</li>
+      <li>GitHub Actions or Jenkins</li>
+      <li>Running tests in CI/CD pipelines</li>
+    </ul>
+
+    <h3>Resources:</h3>
+    <ul>
+      <li><a href="https://docs.github.com/en/actions">GitHub Actions Docs</a></li>
+      <li><a href="https://testautomationu.applitools.com/continuous-integration/">CI/CD for Testers – TAU</a></li>
+    </ul>
+    <hr>
+
+    <h2>📘 Phase 7: Build a Portfolio</h2>
+    <ul>
+      <li>Automate a sample e-commerce site</li>
+      <li>Use GitHub to host your framework</li>
+      <li>Integrate CI (e.g., GitHub Actions)</li>
+    </ul>
+    <hr>
+
+    <h2>🚀 Final Notes</h2>
+    <ul>
+      <li>Choose a stack: <strong>Python + Selenium</strong> or <strong>JavaScript + Playwright</strong></li>
+      <li>Practice regularly</li>
+      <li>Join QA communities: Reddit, LinkedIn, Discord</li>
+    </ul>
+  </div>
+</body>
+</html>

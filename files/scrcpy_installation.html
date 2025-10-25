@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>scrcpy - Installation steps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content-container">
+    <h1>scrcpy - Installatio steps</h1>
+    <p>Follow these steps to connect your device over TCP/IP and use <strong>scrcpy</strong> for wireless screen mirroring and control.</p>
+
+    <hr>
+
+    <h2>📱 Common Steps (All Platforms)</h2>
+    <ol>
+      <li><strong>Connect device via USB.</strong></li>
+      <li><strong>Enable USB debugging on your device:</strong>
+        <ul>
+          <li>Go to <strong>Settings &gt; Developer options &gt; USB debugging</strong> and enable it.</li>
+        </ul>
+      </li>
+      <li><strong>Find device IP address:</strong>
+        <ul>
+          <li>Go to <strong>Settings &gt; About phone &gt; Status &gt; IP address</strong>.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <hr>
+
+    <h2>🐧 Linux / Ubuntu</h2>
+    <h3>Prerequisites</h3>
+    <p>Install ADB and scrcpy:</p>
+    <pre>
+sudo apt update
+sudo apt install adb scrcpy -y
+    </pre>
+
+    <h3>Steps</h3>
+    <ol start="4">
+      <li><strong>Enable TCP/IP debugging:</strong>
+        <pre>adb tcpip 5555</pre>
+      </li>
+      <li><strong>Connect to the device via Wi-Fi:</strong>
+        <pre>adb connect &lt;device_ip&gt;:5555</pre>
+        <p>Replace <code>&lt;device_ip&gt;</code> with your device's actual IP address (e.g., <code>192.168.1.100</code>).</p>
+      </li>
+      <li><strong>Disconnect USB cable from your device.</strong></li>
+      <li><strong>Run scrcpy to start screen mirroring:</strong>
+        <pre>scrcpy</pre>
+      </li>
+    </ol>
+
+    <hr>
+
+    <h2>🪟 Windows</h2>
+    <h3>Prerequisites</h3>
+    <p>Download and install the following:</p>
+    <ul>
+      <li><strong>ADB (Android SDK Platform Tools):</strong> <a href="https://developer.android.com/tools/releases/platform-tools" target="_blank" rel="noopener noreferrer">Download here</a></li>
+      <li><strong>scrcpy:</strong> <a href="https://github.com/Genymobile/scrcpy/releases" target="_blank" rel="noopener noreferrer">Download the Windows zip</a> or install via:
+        <pre>winget install Genymobile.scrcpy</pre>
+        or
+        <pre>choco install scrcpy</pre>
+      </li>
+    </ul>
+    <p>Make sure <code>adb.exe</code> and <code>scrcpy.exe</code> are added to your system PATH, or navigate to their installation directories in Command Prompt/PowerShell.</p>
+
+    <h3>Steps</h3>
+    <ol start="4">
+      <li><strong>Enable TCP/IP debugging:</strong>
+        <p>Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> and run:</p>
+        <pre>adb tcpip 5555</pre>
+      </li>
+      <li><strong>Connect to the device via Wi-Fi:</strong>
+        <pre>adb connect &lt;device_ip&gt;:5555</pre>
+        <p>Replace <code>&lt;device_ip&gt;</code> with your device's actual IP address (e.g., <code>192.168.1.100</code>).</p>
+      </li>
+      <li><strong>Disconnect USB cable from your device.</strong></li>
+      <li><strong>Run scrcpy to start screen mirroring:</strong>
+        <pre>scrcpy</pre>
+      </li>
+    </ol>
+
+    <hr>
+
+    <h2>✅ Verification</h2>
+    <p>Your device should now be connected via Wi-Fi, and you can control it wirelessly with <strong>scrcpy</strong>.</p>
+    <p>To verify the connection, run:</p>
+    <pre>adb devices</pre>
+    <p>You should see your device's IP address listed with <code>device</code> status.</p>
+
+    <hr>
+
+    <h2>🔧 Troubleshooting</h2>
+    <ul>
+      <li>Ensure both your PC and Android device are on the <strong>same Wi-Fi network</strong>.</li>
+      <li>If connection fails, restart ADB:
+        <pre>adb kill-server
+adb start-server</pre>
+      </li>
+      <li>Check firewall settings—port <code>5555</code> should be open.</li>
+      <li>If scrcpy doesn't start, verify installation and PATH configuration.</li>
+    </ul>
+
+    <hr>
+  </div>
+</body>
+</html>

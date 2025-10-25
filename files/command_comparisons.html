@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CLI Command Comparisons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to your common CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content-container">
+    <h1>CLI Command Comparisons</h1>
+    <div class="description">
+      This table provides a quick comparison of common command-line interface (CLI) commands used in Windows Command Prompt and Linux terminals, along with a brief description of their functions.
+    </div>
+
+    <h2>Basic Commands</h2>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Windows</th>
+            <th>Linux</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>List directory contents</td>
+            <td><code>dir</code></td>
+            <td><code>ls</code></td>
+            <td>Lists files and directories in the current directory.</td>
+          </tr>
+          <tr>
+            <td>Change directory</td>
+            <td><code>cd</code></td>
+            <td><code>cd</code></td>
+            <td>Changes the current working directory.</td>
+          </tr>
+          <tr>
+            <td>Copy files</td>
+            <td><code>copy</code></td>
+            <td><code>cp</code></td>
+            <td>Copies one or more files to another location.</td>
+          </tr>
+          <tr>
+            <td>Move/rename files</td>
+            <td><code>move</code></td>
+            <td><code>mv</code></td>
+            <td>Moves or renames files or directories.</td>
+          </tr>
+          <tr>
+            <td>Delete a file</td>
+            <td><code>del</code></td>
+            <td><code>rm</code></td>
+            <td>Deletes a file.</td>
+          </tr>
+          <tr>
+            <td>Delete a directory</td>
+            <td><code>rmdir</code> / <code>rd</code></td>
+            <td><code>rmdir</code> / <code>rm -r</code></td>
+            <td>Removes a directory. <code>rm -r</code> also deletes non-empty directories in Linux.</td>
+          </tr>
+          <tr>
+            <td>Create a directory</td>
+            <td><code>mkdir</code></td>
+            <td><code>mkdir</code></td>
+            <td>Creates a new directory.</td>
+          </tr>
+          <tr>
+            <td>Display file contents</td>
+            <td><code>type</code></td>
+            <td><code>cat</code></td>
+            <td>Displays the contents of a file.</td>
+          </tr>
+          <tr>
+            <td>Clear the screen</td>
+            <td><code>cls</code></td>
+            <td><code>clear</code></td>
+            <td>Clears the terminal screen.</td>
+          </tr>
+          <tr>
+            <td>Show current directory</td>
+            <td><code>cd</code></td>
+            <td><code>pwd</code></td>
+            <td>Displays the path of the current directory.</td>
+          </tr>
+          <tr>
+            <td>Search for text in file</td>
+            <td><code>find</code></td>
+            <td><code>grep</code></td>
+            <td>Searches for a string in a file.</td>
+          </tr>
+          <tr>
+            <td>Ping a host</td>
+            <td><code>ping</code></td>
+            <td><code>ping</code></td>
+            <td>Tests connectivity to a network host.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <h2>Intermediate Commands</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Windows</th>
+            <th>Linux</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>View running processes</td>
+            <td><code>tasklist</code></td>
+            <td><code>ps</code> / <code>top</code></td>
+            <td>Displays running processes.</td>
+          </tr>
+          <tr>
+            <td>Kill a process</td>
+            <td><code>taskkill /PID &lt;id&gt;</code></td>
+            <td><code>kill &lt;pid&gt;</code></td>
+            <td>Terminates a process by its process ID.</td>
+          </tr>
+          <tr>
+            <td>Search for files</td>
+            <td><code>dir /s &lt;filename&gt;</code></td>
+            <td><code>find</code> / <code>find . -name</code></td>
+            <td>Searches for files in directories.</td>
+          </tr>
+          <tr>
+            <td>Rename a file</td>
+            <td><code>ren</code></td>
+            <td><code>mv</code></td>
+            <td>Renames a file or directory.</td>
+          </tr>
+          <tr>
+            <td>Change file attributes</td>
+            <td><code>attrib</code></td>
+            <td><code>chmod</code> / <code>chown</code></td>
+            <td>Modifies file permissions or ownership.</td>
+          </tr>
+          <tr>
+            <td>View environment variables</td>
+            <td><code>set</code></td>
+            <td><code>printenv</code> / <code>env</code></td>
+            <td>Displays environment variables.</td>
+          </tr>
+          <tr>
+            <td>Set environment variables</td>
+            <td><code>set VAR=value</code></td>
+            <td><code>export VAR=value</code></td>
+            <td>Sets environment variables.</td>
+          </tr>
+          <tr>
+            <td>Redirect output to file</td>
+            <td><code>command &gt; file.txt</code></td>
+            <td><code>command &gt; file.txt</code></td>
+            <td>Redirects command output to a file.</td>
+          </tr>
+          <tr>
+            <td>Append output to file</td>
+            <td><code>command &gt;&gt; file.txt</code></td>
+            <td><code>command &gt;&gt; file.txt</code></td>
+            <td>Appends command output to a file.</td>
+          </tr>
+          <tr>
+            <td>Run script files</td>
+            <td><code>.bat</code> or <code>.cmd</code> files</td>
+            <td><code>.sh</code> (via <code>bash</code>)</td>
+            <td>Executes batch or shell scripts.</td>
+          </tr>
+          <tr>
+            <td>Download a file</td>
+            <td><code>curl</code></td>
+            <td><code>wget</code> / <code>curl</code></td>
+            <td>Downloads files using HTTP/S.</td>
+          </tr>
+          <tr>
+            <td>View disk usage</td>
+            <td><code>dir</code></td>
+            <td><code>df -h</code> / <code>du -sh</code></td>
+            <td>Displays storage usage.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <h2>Advanced Commands</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Function</th>
+            <th>Windows</th>
+            <th>Linux</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Schedule a task</td>
+            <td><code>schtasks</code></td>
+            <td><code>cron</code> / <code>crontab</code></td>
+            <td>Automates task execution at specified times.</td>
+          </tr>
+          <tr>
+            <td>View system info</td>
+            <td><code>systeminfo</code></td>
+            <td><code>uname -a</code> / <code>hostnamectl</code></td>
+            <td>Displays system and kernel information.</td>
+          </tr>
+          <tr>
+            <td>Manage services</td>
+            <td><code>sc</code> / <code>net start/stop</code></td>
+            <td><code>systemctl</code> / <code>service</code></td>
+            <td>Starts, stops, or manages services.</td>
+          </tr>
+          <tr>
+            <td>Network configuration</td>
+            <td><code>ipconfig</code> / <code>netsh</code></td>
+            <td><code>ifconfig</code> / <code>ip</code></td>
+            <td>Views or configures network interfaces.</td>
+          </tr>
+          <tr>
+            <td>View open ports</td>
+            <td><code>netstat -an</code></td>
+            <td><code>netstat</code> / <code>ss</code></td>
+            <td>Displays open ports and listening services.</td>
+          </tr>
+          <tr>
+            <td>User account management</td>
+            <td><code>net user</code></td>
+            <td><code>useradd</code> / <code>usermod</code> / <code>passwd</code></td>
+            <td>Manages user accounts and passwords.</td>
+          </tr>
+          <tr>
+            <td>Compress files</td>
+            <td><code>compact</code> / third-party tools</td>
+            <td><code>tar</code> / <code>gzip</code> / <code>zip</code></td>
+            <td>Compresses or archives files and folders.</td>
+          </tr>
+          <tr>
+            <td>View logs</td>
+            <td><code>eventvwr</code></td>
+            <td><code>journalctl</code> / <code>dmesg</code></td>
+            <td>Views system and kernel logs.</td>
+          </tr>
+          <tr>
+            <td>Remote session</td>
+            <td><code>mstsc</code> / <code>PsExec</code></td>
+            <td><code>ssh</code></td>
+            <td>Initiates a remote desktop or shell session.</td>
+          </tr>
+          <tr>
+            <td>Monitor system performance</td>
+            <td><code>perfmon</code> / <code>resmon</code></td>
+            <td><code>htop</code> / <code>vmstat</code> / <code>iotop</code></td>
+            <td>Monitors real-time system performance.</td>
+          </tr>
+          <tr>
+            <td>Run as administrator/root</td>
+            <td><code>runas</code></td>
+            <td><code>sudo</code></td>
+            <td>Executes commands with elevated privileges.</td>
+          </tr>
+          <tr>
+            <td>Edit boot configuration</td>
+            <td><code>bcdedit</code></td>
+            <td><code>grub-mkconfig</code> / <code>update-grub</code></td>
+            <td>Manages boot loader configurations.</td>
+          </tr>
+          <tr>
+            <td>Package management</td>
+            <td>Chocolatey / Winget</td>
+            <td><code>apt</code> / <code>yum</code> / <code>dnf</code> / <code>pacman</code></td>
+            <td>Installs, updates, or removes software packages.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <div class="description">
+      On Linux, combining commands with pipes (<code>|</code>) and using scripting techniques like loops and conditions can significantly increase CLI power. On Windows, PowerShell offers enhanced scripting and object manipulation beyond traditional Command Prompt.
+    </div>
+
+    <hr>
+
+    <blockquote>
+      <strong>Note:</strong> Some commands may require administrator/root privileges depending on the system configuration.
+    </blockquote>
+  </div>
+</body>
+</html>
