@@ -13,60 +13,65 @@
       Let me know if you have any suggestions or contributions!</p>
   </div>
 
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Project</th>
-          <th>Domain</th>
-          <th>Category</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="./files/automation.html">Roadmap: Manual to Automation Testing</a></td>
-          <td>Software Development and Testing</td>
-          <td>Guide</td>
-          <td>Roadmap to transition from Manual to Automation Testing.</td>
-        </tr>
-        <tr>
-          <td><a href="./files/command_comparisons.html">CLI Commands Comparison</a></td>
-          <td>IT and Networking</td>
-          <td>Reference</td>
-          <td>List of CLI commands comparison for Windows and Linux (haven't tested yet, mostly works)</td>
-        </tr>
-        <tr>
-          <td><a href="./files/insane_linux_commands.html">Insane Linux Commands</a></td>
-          <td>IT and Networking</td>
-          <td>Reference</td>
-          <td>Insane Linux CLI commands. That's it!</td>
-        </tr>
-        <tr>
-          <td><a href="./files/linux_compatibility_checker.html">Linux Compatibility Checker</a></td>
-          <td>IT and Networking</td>
-          <td>Checklist</td>
-          <td>Commands to check hardware compatibility after installing Ubuntu (may work for other distros, untested).</td>
-        </tr>
-        <tr>
-          <td><a href="./files/selenium_setup.html">Selenium + Python (Setup and Demo) - Ubuntu</a></td>
-          <td>Software Development and Testing</td>
-          <td>Tutorial</td>
-          <td>Guide to setup Selenium in Python (for both chromedriver and geckodriver).</td>
-        </tr>
-        <tr>
-          <td><a href="./files/effective_learning.html">Effective Learning Tips</a></td>
-          <td>Learning (General)</td>
-          <td>Guide</td>
-          <td>Effective tips for learning with AI guidance.</td>
-        <tr>
-          <td><a href="./files/scrcpy_installation.html">scrcpy - Installation steps</a></td>
-          <td>IT and Networking</td>
-          <td>Guide</td>
-          <td>Installation steps for scrcpy (screen mirroring tool)</td>
-      </tbody>
-      </tbody>
-    </table>
+  <div class="projects-container">
+    <div class="projects-grid">
+      <section class="projects-panel" id="by-domain">
+        <h2>Projects List</h2>
+
+        <div class="group">
+          <h3>Software Development and Testing</h3>
+          <ul>
+            <li class="project-item">
+              <a href="./files/automation.html">Roadmap: Manual to Automation Testing</a>
+              <span class="badge badge-guide">Guide</span>
+              <div class="desc">Roadmap to transition from Manual to Automation Testing.</div>
+            </li>
+            <li class="project-item">
+              <a href="./files/selenium_setup.html">Selenium + Python (Setup and Demo) - Ubuntu</a>
+              <span class="badge badge-tutorial">Tutorial</span>
+              <div class="desc">Guide to setup Selenium in Python (for both chromedriver and geckodriver).</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h3>IT and Networking</h3>
+          <ul>
+            <li class="project-item">
+              <a href="./files/command_comparisons.html">CLI Commands Comparison</a>
+              <span class="badge badge-reference">Reference</span>
+              <div class="desc">List of CLI commands comparison for Windows and Linux (haven't tested yet, mostly works)</div>
+            </li>
+            <li class="project-item">
+              <a href="./files/insane_linux_commands.html">Insane Linux Commands</a>
+              <span class="badge badge-reference">Reference</span>
+              <div class="desc">Insane Linux CLI commands. That's it!</div>
+            </li>
+            <li class="project-item">
+              <a href="./files/linux_compatibility_checker.html">Linux Compatibility Checker</a>
+              <span class="badge badge-checklist">Checklist</span>
+              <div class="desc">Commands to check hardware compatibility after installing Ubuntu (may work for other distros, untested).</div>
+            </li>
+            <li class="project-item">
+              <a href="./files/scrcpy_installation.html">scrcpy - Installation steps</a>
+              <span class="badge badge-tutorial">Tutorial</span>
+              <div class="desc">Installation steps for scrcpy (screen mirroring tool)</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h3>Learning (General)</h3>
+          <ul>
+            <li class="project-item">
+              <a href="./files/effective_learning.html">Effective Learning Tips</a>
+              <span class="badge badge-guide">Guide</span>
+              <div class="desc">Effective tips for learning with AI guidance.</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </div>
 
   <script src="script.js"></script>
