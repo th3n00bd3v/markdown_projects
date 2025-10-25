@@ -13,62 +13,78 @@
       Let me know if you have any suggestions or contributions!</p>
   </div>
 
+  <!-- Add the controls container div here -->
+  <div class="controls-container">
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Search">
+    </div>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="guide">Guide</button>
+      <button class="filter-btn" data-filter="tutorial">Tutorial</button>
+      <button class="filter-btn" data-filter="reference">Reference</button>
+      <button class="filter-btn" data-filter="checklist">Checklist</button>
+    </div>
+  </div>
+
   <div class="projects-container">
     <div class="projects-grid">
       <section class="projects-panel" id="by-domain">
         <h2>Projects List</h2>
 
-        <div class="group">
-          <h3>Software Development and Testing</h3>
-          <ul>
-            <li class="project-item">
-              <a href="./files/automation.html">Roadmap: Manual to Automation Testing</a>
-              <span class="badge badge-guide">Guide</span>
-              <div class="desc">Roadmap to transition from Manual to Automation Testing.</div>
-            </li>
-            <li class="project-item">
-              <a href="./files/selenium_setup.html">Selenium + Python (Setup and Demo) - Ubuntu</a>
-              <span class="badge badge-tutorial">Tutorial</span>
-              <div class="desc">Guide to setup Selenium in Python (for both chromedriver and geckodriver).</div>
-            </li>
-          </ul>
-        </div>
+        <div class="groups-container">
+          <div class="group">
+            <h3>Software Development and Testing</h3>
+            <ul>
+              <li class="project-item">
+                <a href="./files/automation.html">Roadmap: Manual to Automation Testing</a>
+                <span class="badge badge-guide">Guide</span>
+                <div class="desc">Roadmap to transition from Manual to Automation Testing.</div>
+              </li>
+              <li class="project-item">
+                <a href="./files/selenium_setup.html">Selenium + Python (Setup and Demo) - Ubuntu</a>
+                <span class="badge badge-tutorial">Tutorial</span>
+                <div class="desc">Guide to setup Selenium in Python (for both chromedriver and geckodriver).</div>
+              </li>
+            </ul>
+          </div>
 
-        <div class="group">
-          <h3>IT and Networking</h3>
-          <ul>
-            <li class="project-item">
-              <a href="./files/command_comparisons.html">CLI Commands Comparison</a>
-              <span class="badge badge-reference">Reference</span>
-              <div class="desc">List of CLI commands comparison for Windows and Linux (haven't tested yet, mostly works)</div>
-            </li>
-            <li class="project-item">
-              <a href="./files/insane_linux_commands.html">Insane Linux Commands</a>
-              <span class="badge badge-reference">Reference</span>
-              <div class="desc">Insane Linux CLI commands. That's it!</div>
-            </li>
-            <li class="project-item">
-              <a href="./files/linux_compatibility_checker.html">Linux Compatibility Checker</a>
-              <span class="badge badge-checklist">Checklist</span>
-              <div class="desc">Commands to check hardware compatibility after installing Ubuntu (may work for other distros, untested).</div>
-            </li>
-            <li class="project-item">
-              <a href="./files/scrcpy_installation.html">scrcpy - Installation steps</a>
-              <span class="badge badge-tutorial">Tutorial</span>
-              <div class="desc">Installation steps for scrcpy (screen mirroring tool)</div>
-            </li>
-          </ul>
-        </div>
+          <div class="group">
+            <h3>IT and Networking</h3>
+            <ul>
+              <li class="project-item">
+                <a href="./files/command_comparisons.html">CLI Commands Comparison</a>
+                <span class="badge badge-reference">Reference</span>
+                <div class="desc">List of CLI commands comparison for Windows and Linux (haven't tested yet, mostly works)</div>
+              </li>
+              <li class="project-item">
+                <a href="./files/insane_linux_commands.html">Insane Linux Commands</a>
+                <span class="badge badge-reference">Reference</span>
+                <div class="desc">Insane Linux CLI commands. That's it!</div>
+              </li>
+              <li class="project-item">
+                <a href="./files/linux_compatibility_checker.html">Linux Compatibility Checker</a>
+                <span class="badge badge-checklist">Checklist</span>
+                <div class="desc">Commands to check hardware compatibility after installing Ubuntu (may work for other distros, untested).</div>
+              </li>
+              <li class="project-item">
+                <a href="./files/scrcpy_installation.html">scrcpy - Installation steps</a>
+                <span class="badge badge-tutorial">Tutorial</span>
+                <div class="desc">Installation steps for scrcpy (screen mirroring tool)</div>
+              </li>
+            </ul>
+          </div>
 
-        <div class="group">
-          <h3>Learning (General)</h3>
-          <ul>
-            <li class="project-item">
-              <a href="./files/effective_learning.html">Effective Learning Tips</a>
-              <span class="badge badge-guide">Guide</span>
-              <div class="desc">Effective tips for learning with AI guidance.</div>
-            </li>
-          </ul>
+          <div class="group">
+            <h3>Learning (General)</h3>
+            <ul>
+              <li class="project-item">
+                <a href="./files/effective_learning.html">Effective Learning Tips</a>
+                <span class="badge badge-guide">Guide</span>
+                <div class="desc">Effective tips for learning with AI guidance.</div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>

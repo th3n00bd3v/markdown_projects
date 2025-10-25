@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
-  --primary: #3498db;
-  --primary-dark: #2980b9;
+  --primary: #000000;
+  --primary-dark: #4d44e;
   --secondary: #2ecc71;
   --dark: #2c3e50;
   --gray-100: #f8f9fa;
@@ -41,10 +41,9 @@ h1 {
 }
 
 .projects-panel {
-  background: white;
+  background: transparent;
   padding: 2rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
+  box-shadow: none;
 }
 
 .projects-panel h2 {
@@ -57,15 +56,30 @@ h1 {
   margin-bottom: 2rem;
 }
 
+.group {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
 .group + .group {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 .group h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 1.5rem;
   font-size: 1.25rem;
   color: var(--primary-dark);
   font-weight: 600;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.group ul {
+  padding: 0 20px;
+  margin: 0;
 }
 
 .project-item {
@@ -129,6 +143,71 @@ h1 {
   background: #2ecc71; /* Green */
 }
 
+/* Controls Container */
+.controls-container {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.search-box {
+  margin-bottom: 1rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background: var(--gray-200);
+  color: var(--dark);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  background: var(--gray-600);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.filter-btn.active:hover {
+  background: var(--primary-dark);
+}
+
+.project-item.hidden {
+  display: none;
+}
+
+/* Add with other hidden-related styles */
+.group.hidden {
+    display: none;
+}
+
 /* Responsive */
 @media screen and (max-width: 900px) {
   body {
@@ -146,5 +225,25 @@ h1 {
   
   h1 {
     font-size: 2rem;
+  }
+    
+  .group {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .project-item {
+    padding: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .filters {
+    justify-content: center;
+  }
+  
+  .filter-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
   }
 }
