@@ -1,95 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Tidbits</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Tidbits</h1>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tidbits</title>
 
-  <div class="description">
-    <p>Some useful information compiled topic-wise.
-      Let me know if you have any suggestions or contributions!</p>
-  </div>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#000000",
+              secondary: "#2ecc71",
+              gray100: "#f8f9fa",
+              gray200: "#e9ecef",
+              gray600: "#6c757d"
+            }
+          }
+        }
+      };
+    </script>
 
-  <!-- Add the controls container div here -->
-  <div class="controls-container">
-    <div class="search-box">
-      <input type="text" id="search" placeholder="Search">
-    </div>
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="guide">Guide</button>
-      <button class="filter-btn" data-filter="tutorial">Tutorial</button>
-      <button class="filter-btn" data-filter="reference">Reference</button>
-      <button class="filter-btn" data-filter="checklist">Checklist</button>
-    </div>
-  </div>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Outfit:wght@600;700&display=swap" rel="stylesheet" />
 
-  <div class="projects-container">
-    <div class="projects-grid">
-      <section class="projects-panel" id="by-domain">
-        <h2>Projects List</h2>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-        <div class="groups-container">
-          <div class="group">
-            <h3>Software Development and Testing</h3>
-            <ul>
-              <li class="project-item">
-                <a href="./files/automation.html">Roadmap: Manual to Automation Testing</a>
-                <span class="badge badge-guide">Guide</span>
-                <div class="desc">Roadmap to transition from Manual to Automation Testing.</div>
-              </li>
-              <li class="project-item">
-                <a href="./files/selenium_setup.html">Selenium + Python (Setup and Demo) - Ubuntu</a>
-                <span class="badge badge-tutorial">Tutorial</span>
-                <div class="desc">Guide to setup Selenium in Python (for both chromedriver and geckodriver).</div>
-              </li>
-            </ul>
-          </div>
+  <body class="font-sans bg-gray-50 dark:bg-slate-900 transition-colors duration-300" style="font-family: var(--font-sans)">
 
-          <div class="group">
-            <h3>IT and Networking</h3>
-            <ul>
-              <li class="project-item">
-                <a href="./files/command_comparisons.html">CLI Commands Comparison</a>
-                <span class="badge badge-reference">Reference</span>
-                <div class="desc">List of CLI commands comparison for Windows and Linux (haven't tested yet, mostly works)</div>
-              </li>
-              <li class="project-item">
-                <a href="./files/insane_linux_commands.html">Insane Linux Commands</a>
-                <span class="badge badge-reference">Reference</span>
-                <div class="desc">Insane Linux CLI commands. That's it!</div>
-              </li>
-              <li class="project-item">
-                <a href="./files/linux_compatibility_checker.html">Linux Compatibility Checker</a>
-                <span class="badge badge-checklist">Checklist</span>
-                <div class="desc">Commands to check hardware compatibility after installing Ubuntu (may work for other distros, untested).</div>
-              </li>
-              <li class="project-item">
-                <a href="./files/scrcpy_installation.html">scrcpy - Installation steps</a>
-                <span class="badge badge-tutorial">Tutorial</span>
-                <div class="desc">Installation steps for scrcpy (screen mirroring tool)</div>
-              </li>
-            </ul>
-          </div>
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-slate-900/70 border-b border-white/40 dark:border-slate-800/40 shadow-sm transition">
+      <div class="max-w-6xl mx-auto px-4 py-4 text-center">
+        <h1 class="text-3xl md:text-4xl font-extrabold leading-tight" style="font-family: var(--font-head)">Tidbits</h1>
+      </div>
+    </header>
 
-          <div class="group">
-            <h3>Learning (General)</h3>
-            <ul>
-              <li class="project-item">
-                <a href="./files/effective_learning.html">Effective Learning Tips</a>
-                <span class="badge badge-guide">Guide</span>
-                <div class="desc">Effective tips for learning with AI guidance.</div>
-              </li>
-            </ul>
+    <!-- Title + Search/Filter Card -->
+    <section class="sticky top-[80px] z-40 bg-transparent pt-4 pb-2">
+      <div class="mx-auto max-w-4xl px-4">
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md border border-white/40 dark:border-slate-700/40 p-6">
+          <p class="text-base md:text-lg text-slate-700 dark:text-slate-300 text-center mb-4">
+            Useful information compiled topic-wise. Contribute ideas and tools anytime!
+          </p>
+
+          <!-- Search + Filter + Dark Mode -->
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <input
+              id="search"
+              type="text"
+              placeholder="Search"
+              class="flex-1 px-4 py-3 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+            />
+
+            <select
+              id="filterDropdown"
+              class="w-full sm:w-44 px-4 py-3 rounded-lg border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+            >
+              <option value="all">All</option>
+              <option value="guide">Guide</option>
+              <option value="tutorial">Tutorial</option>
+              <option value="reference">Reference</option>
+              <option value="checklist">Checklist</option>
+            </select>
+
+            <button
+              id="theme-toggle"
+              class="px-4 py-3 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-100 hover:scale-105 transition"
+              aria-label="Toggle dark mode"
+            >
+              🌙
+            </button>
           </div>
         </div>
-      </section>
-    </div>
-  </div>
+      </div>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <!-- Main Content -->
+    <main class="mt-10 mb-16">
+      <div class="mx-auto max-w-4xl px-4">
+        <section>
+          <div class="space-y-6">
+
+            <!-- Group 1 -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-white/40 dark:border-slate-700/40 group">
+              <h2 class="text-xl font-semibold mb-4" style="font-family: var(--font-head)">Software Development and Testing</h2>
+              <ul class="space-y-4">
+                <li class="project-item" data-category="guide">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <a href="./files/automation.html" class="text-lg font-semibold text-black dark:text-white hover:underline">
+                        Roadmap: Manual to Automation Testing
+                      </a>
+                      <div class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                        Roadmap to transition from Manual to Automation Testing.
+                      </div>
+                    </div>
+                    <span class="badge inline-block px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide bg-blue-600 text-white">Guide</span>
+                  </div>
+                </li>
+
+                <li class="project-item" data-category="tutorial">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <a href="./files/selenium_setup.html" class="text-lg font-semibold text-black dark:text-white hover:underline">
+                        Selenium + Python (Setup and Demo) - Ubuntu
+                      </a>
+                      <div class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                        Guide to setup Selenium in Python (for both chromedriver and geckodriver).
+                      </div>
+                    </div>
+                    <span class="badge inline-block px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide bg-orange-500 text-white">Tutorial</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Group 2 -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-white/40 dark:border-slate-700/40 group">
+              <h2 class="text-xl font-semibold mb-4" style="font-family: var(--font-head)">IT and Networking</h2>
+              <ul class="space-y-4">
+                <li class="project-item" data-category="reference">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <a href="./files/command_comparisons.html" class="text-lg font-semibold text-black dark:text-white hover:underline">
+                        CLI Commands Comparison
+                      </a>
+                      <div class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                        List of CLI commands comparison for Windows and Linux.
+                      </div>
+                    </div>
+                    <span class="badge inline-block px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide bg-yellow-400 text-white">Reference</span>
+                  </div>
+                </li>
+
+                <li class="project-item" data-category="checklist">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <a href="./files/linux_compatibility_checker.html" class="text-lg font-semibold text-black dark:text-white hover:underline">
+                        Linux Compatibility Checker
+                      </a>
+                      <div class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                        Commands to check hardware compatibility after installing Ubuntu.
+                      </div>
+                    </div>
+                    <span class="badge inline-block px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide bg-green-500 text-white">Checklist</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Group 3 -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-white/40 dark:border-slate-700/40 group">
+              <h2 class="text-xl font-semibold mb-4" style="font-family: var(--font-head)">Learning (General)</h2>
+              <ul class="space-y-4">
+                <li class="project-item" data-category="guide">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <a href="./files/effective_learning.html" class="text-lg font-semibold text-black dark:text-white hover:underline">
+                        Effective Learning Tips
+                      </a>
+                      <div class="text-sm text-slate-600 dark:text-slate-300 mt-1">
+                        Effective tips for learning with AI guidance.
+                      </div>
+                    </div>
+                    <span class="badge inline-block px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wide bg-blue-600 text-white">Guide</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pb-16">
+      <div class="mx-auto max-w-4xl px-4 text-center text-sm text-slate-500 dark:text-slate-400">
+        <div class="mb-2">Made with ❤️ — feel free to contribute.</div>
+        <div>&copy; <span id="year"></span> Tidbits</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
